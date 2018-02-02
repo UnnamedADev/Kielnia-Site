@@ -10,8 +10,11 @@ $(document).ready(function(){
     
     function afterLoad(){
         setTimeout(function(){
-        $(".fLoader").slideUp(500, "linear");
-    },2000);
+            $(".fLoader").slideUp(500, "linear");
+        },2000);
+        setTimeout(function(){
+            $(".fLoaderAfter").slideUp(400,"linear");
+        },2100);
     }
 
 });

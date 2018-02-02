@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+@import "variables.scss";
+@import "mixins.scss";
+
 html, body, ul, ol {
     margin: 0;
     padding: 0;
@@ -13,22 +16,6 @@ img {
     max-width: 100%;
 }
 
-$fair: #eee;
-$dark: #111;
-
-@mixin text-shadow($x, $y, $blur, $size, $color){
-    text-shadow: $x $y $blur $size $color;
-    -ms-text-shadow: $x $y $blur $size $color;
-    -moz-text-shadow: $x $y $blur $size $color;
-    -webkit-text-shadow: $x $y $blur $size $color;
-}
-@mixin border-radius($radius){
-    border-radius: $radius;
-    -ms-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -webkit-border-radius: $radius;
-}
-
 %fixed-tile {
     position: fixed;
     width: 100%;
@@ -38,6 +25,7 @@ $dark: #111;
     text-transform: uppercase;
 }
 body {
+    /* LOADER */
     $fLoaderWidth: 96%;
     .fLoader {
         @extend %fixed-tile;
@@ -127,13 +115,19 @@ body {
             }
         }
     }
+    /* AFTER LOaDER */
+    .fLoaderAfter{
+        @extend %fixed-tile;
+        background: $verydark;
+    }
+    /* THEME */
     .fTheme {
         @extend %fixed-tile;
-            z-index: 10000;
+        z-index: 10000;
         background: url(resources/img/kielnia2.jpg);
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: 0% 30%;
     }
-    
+    /* PAGE */
 }
