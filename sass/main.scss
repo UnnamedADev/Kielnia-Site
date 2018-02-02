@@ -25,29 +25,34 @@ img {
     text-transform: uppercase;
 }
 body {
+    /* PRE LOADER */
+    .preLoader {
+        z-index: 15000;
+        position: fixed;
+        width: 100%;
+        display: none;
+    }
     /* LOADER */
     $fLoaderWidth: 96%;
     .fLoader {
         @extend %fixed-tile;
         z-index: 20000;
-        background: $dark;
         padding-top: ((100%-$fLoaderWidth)/2);
-        color: $fair;
-        
+        color: $normal-special;
+        background: $veryfair;
         
         >div {
             $animationHolderWidth: 96%;
             
             width: $fLoaderWidth;
             height: $fLoaderWidth;
-            border: 2px dashed $fair;
+            border: 2px dashed $normal-special;
             margin: auto;
             padding-top: ((100%-$animationHolderWidth)/2);
             display: none;
             
             >h1 {
                 position: absolute;
-                background: $dark;
                 margin: auto;
                 left: 0;
                 right: 0;
@@ -55,12 +60,13 @@ body {
                 width: 8%;
                 text-align: center;
                 display: none;
+                background: $veryfair;
             }
             >div {
                 height: $animationHolderWidth;
                 width: 30%;
                 margin: auto;
-                border: 1px solid $fair;
+                border: 1px solid $normal-special;
                 overflow: hidden;
                 display: none;
                 >div{
@@ -72,7 +78,7 @@ body {
                         width: 100%;
                         height: 40%;
                         display: block;
-                        background: $fair;
+                        background: $dark-special;
                         margin-top: -700%;
                     }
 
@@ -118,16 +124,41 @@ body {
     /* AFTER LOaDER */
     .fLoaderAfter{
         @extend %fixed-tile;
-        background: $verydark;
+        background: $light-special;
+        z-index: 19000;
     }
     /* THEME */
     .fTheme {
         @extend %fixed-tile;
+        background: $veryfair;
         z-index: 10000;
-        background: url(resources/img/kielnia2.jpg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 0% 30%;
+        text-align: center;
+        
+        >h1 {
+            @extend %transformed-title;
+            font-size: 5em;
+            letter-spacing: 0.3em;
+            color: $normal-special;
+            margin: 30% auto auto auto;
+        }
+        >div {
+            margin: 0px auto;
+            width: 100px;
+            height: 100px;
+            border: 1px solid $normal-special;
+            @include border-radius(100%);
+            margin-top: 2%;
+            
+            >div {
+                margin: 30px auto auto auto;
+                width: 30px;
+                height: 30px;
+                transform: rotate(45deg);
+                border-right: 2px solid $normal-special;
+                border-bottom: 2px solid $normal-special;
+            }
+
+        }
     }
     /* PAGE */
 }
