@@ -1,7 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 html, body, ul, ol {
     margin: 0;
     padding: 0;
+    font-family: Lato;
 }
 * {
     box-sizing: border-box;
+}
+img {
+    position: relative;
+    max-width: 100%;
+}
+
+$fair: #eee;
+$dark: #111;
+
+@mixin text-shadow($x, $y, $blur, $size, $color){
+    text-shadow: $x $y $blur $size $color;
+    -ms-text-shadow: $x $y $blur $size $color;
+    -moz-text-shadow: $x $y $blur $size $color;
+    -webkit-text-shadow: $x $y $blur $size $color;
+}
+@mixin border-radius($radius){
+    border-radius: $radius;
+    -ms-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+%fixed-tile {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+%transformed-title {
+    text-transform: uppercase;
+}
+body {
+    $fLoaderWidth: 96%;
+    .fLoader {
+        @extend %fixed-tile;
+        z-index: 20000;
+        background: $dark;
+        padding-top: ((100%-$fLoaderWidth)/2);
+        color: $fair;
+        
+        
+        >div {
+            $animationHolderWidth: 96%;
+            
+            width: $fLoaderWidth;
+            height: $fLoaderWidth;
+            border: 2px dashed $fair;
+            margin: auto;
+            padding-top: ((100%-$animationHolderWidth)/2);
+            display: none;
+            
+            >h1 {
+                position: absolute;
+                background: $dark;
+                margin: auto;
+                left: 0;
+                right: 0;
+                bottom: 2%;
+                width: 8%;
+                text-align: center;
+                display: none;
+            }
+            >div {
+                height: $animationHolderWidth;
+                width: 30%;
+                margin: auto;
+                border: 1px solid $fair;
+                overflow: hidden;
+                display: none;
+                >div{
+                    float: left;
+                    width: (100%/6);
+                    height: 100%;
+                    
+                    >div {
+                        width: 100%;
+                        height: 40%;
+                        display: block;
+                        background: $fair;
+                        margin-top: -700%;
+                    }
+
+                }
+                >div:nth-child(1){
+                    div {
+                        animation: loaderAnimation 3s linear infinite alternate;
+                    }
+                }
+                >div:nth-child(2){
+                    div {
+                        animation: loaderAnimation 1s linear infinite alternate;
+                    }
+                }
+                >div:nth-child(3){
+                    div {
+                        animation: loaderAnimation 1.5s linear infinite alternate;
+                    }
+                }
+                >div:nth-child(4){
+                    div {
+                        animation: loaderAnimation 2s linear infinite alternate;
+                    }
+                }
+                >div:nth-child(5){
+                    div {
+                        animation: loaderAnimation 2.5s linear infinite alternate;
+                    }
+                }
+                >div:nth-child(6){
+                    div {
+                        animation: loaderAnimation 1.5s linear infinite alternate;
+                    }
+                }
+                @keyframes loaderAnimation{
+                    to {
+                        margin-top: 1000%;
+                    }
+                }
+            }
+        }
+    }
+    .fTheme {
+        @extend %fixed-tile;
+            z-index: 10000;
+        background: url(resources/img/kielnia2.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 0% 30%;
+    }
+    
 }
