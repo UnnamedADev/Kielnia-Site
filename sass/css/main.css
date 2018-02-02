@@ -4,8 +4,7 @@
 /* normal */
 html, body, ul, ol {
   margin: 0;
-  padding: 0;
-  font-family: Lato; }
+  padding: 0; }
 
 * {
   box-sizing: border-box; }
@@ -19,14 +18,16 @@ body .fLoader, body .fLoaderAfter, body .fTheme {
   width: 100%;
   height: 100%; }
 
-body .fTheme > h1 {
+body .fTheme > h1, body .fTheme > h2, body .fPage nav ul li a {
   text-transform: uppercase; }
 
 body {
+  font-family: Lato;
   /* PRE LOADER */
   /* LOADER */
   /* AFTER LOaDER */
   /* THEME */
+  /* TRANSITION */
   /* PAGE */ }
   body .preLoader {
     z-index: 15000;
@@ -93,12 +94,27 @@ body {
   body .fTheme {
     background: #fff;
     z-index: 10000;
-    text-align: center; }
+    text-align: center;
+    display: none; }
     body .fTheme > h1 {
       font-size: 5em;
       letter-spacing: 0.3em;
       color: #c1b599;
-      margin: 30% auto auto auto; }
+      margin: 600px auto auto auto;
+      transition: 0.3s ease; }
+      body .fTheme > h1:hover {
+        background: #f9f9f9; }
+    body .fTheme > h2 {
+      text-align: center;
+      position: absolute;
+      font-size: 10em;
+      letter-spacing: 0.3em;
+      color: #f9f9f9;
+      background: #c1b599;
+      width: 100%;
+      margin: 0;
+      top: 0;
+      display: none; }
     body .fTheme > div {
       margin: 0px auto;
       width: 100px;
@@ -108,7 +124,15 @@ body {
       -ms-border-radius: 100%;
       -moz-border-radius: 100%;
       -webkit-border-radius: 100%;
-      margin-top: 2%; }
+      margin-top: 2%;
+      transition: 0.3s ease; }
+      body .fTheme > div:hover {
+        background: #D7C9AA;
+        -webkit-box-shadow: 0px 0px 0px 25px #f9f9f9;
+        -moz-box-shadow: 0px 0px 0px 25px #f9f9f9;
+        box-shadow: 0px 0px 0px 25px #f9f9f9; }
+      body .fTheme > div:hover > div {
+        border-color: #b2a68b; }
       body .fTheme > div > div {
         margin: 30px auto auto auto;
         width: 30px;
@@ -116,5 +140,52 @@ body {
         transform: rotate(45deg);
         border-right: 2px solid #c1b599;
         border-bottom: 2px solid #c1b599; }
+      body .fTheme > div > hr {
+        width: 1px;
+        height: 200px;
+        background: #c1b599;
+        border: none;
+        position: absolute;
+        margin-left: 49px;
+        margin-top: 39px; }
+  body .fTransition {
+    position: absolute;
+    z-index: 8000;
+    width: 1px;
+    height: 100%;
+    left: 50%;
+    background: #c1b599;
+    border: none;
+    display: none; }
+  body .fPage {
+    top: 100%;
+    z-index: 8000;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 2000px;
+    background: #f9f9f9;
+    color: #f9f9f9;
+    display: none; }
+    body .fPage nav {
+      float: left;
+      width: 100%;
+      background: #c1b599; }
+      body .fPage nav ul {
+        list-style-type: none;
+        float: left; }
+        body .fPage nav ul li {
+          float: left; }
+          body .fPage nav ul li a {
+            float: left;
+            padding: 10px 30px;
+            color: #f9f9f9;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-decoration: none; }
+            body .fPage nav ul li a:hover {
+              background: #f9f9f9;
+              color: #c1b599; }
 
 /*# sourceMappingURL=main.css.map */
