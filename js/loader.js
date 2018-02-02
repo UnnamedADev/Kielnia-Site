@@ -1,7 +1,7 @@
 "use strict";
 
 //const
-const loadDelay = 0*1000;
+const loadDelay = 3*1000;
 
 $(document).ready(function(){
     
@@ -19,7 +19,11 @@ $(document).ready(function(){
             $(".fLoader").slideUp(1000, "swing");
         },loadDelay);
         setTimeout(function(){
-            $(".fLoaderAfter").slideUp(1000,"swing");
+            
+            $(".fLoaderAfter").slideUp(1000,"swing",function(){
+                $(".fTheme").fadeIn(300);
+            });
+            
             afterOut();
         },loadDelay+100);
     }
