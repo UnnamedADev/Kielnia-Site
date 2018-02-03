@@ -1,7 +1,7 @@
 "use strict";
 
 //const
-const loadDelay = 3*1000;
+const loadDelay = 0*1000;
 
 $(document).ready(function(){
     
