@@ -13,12 +13,12 @@ img {
   position: relative;
   max-width: 100%; }
 
-body .fLoader, body .fLoaderAfter, body .fTheme {
+body .fLoader, body .fLoaderAfter, body .fTheme, body .fMenu {
   position: fixed;
   width: 100%;
   height: 100%; }
 
-body .fTheme > h1, body .fTheme > h2, body .fPage nav ul li a {
+body .fTheme > h1, body .fTheme > h2, body .fMenu > div:nth-child(1) > div:nth-child(1) h1, body .fPage nav ul li a {
   text-transform: uppercase; }
 
 body {
@@ -28,6 +28,7 @@ body {
   /* AFTER LOaDER */
   /* THEME */
   /* TRANSITION */
+  /* MENU */
   /* PAGE */ }
   body .preLoader {
     z-index: 15000;
@@ -71,7 +72,7 @@ body {
             width: 100%;
             height: 40%;
             display: block;
-            background: #b2a68b;
+            background: #D7C9AA;
             margin-top: -700%; }
         body .fLoader > div > div > div:nth-child(1) div {
           animation: loaderAnimation 3s linear infinite alternate; }
@@ -97,6 +98,9 @@ body {
     text-align: center;
     display: none; }
     body .fTheme > h1 {
+      position: absolute;
+      text-align: center;
+      width: 100%;
       font-size: 5em;
       letter-spacing: 0.3em;
       color: #c1b599;
@@ -109,14 +113,13 @@ body {
       position: absolute;
       font-size: 10em;
       letter-spacing: 0.3em;
-      color: #f9f9f9;
-      background: #c1b599;
+      color: #c1b599;
+      background: #f9f9f9;
       width: 100%;
       margin: 0;
       top: 0;
       display: none; }
     body .fTheme > div {
-      margin: 0px auto;
       width: 100px;
       height: 100px;
       border: 1px solid #c1b599;
@@ -124,7 +127,7 @@ body {
       -ms-border-radius: 100%;
       -moz-border-radius: 100%;
       -webkit-border-radius: 100%;
-      margin-top: 2%;
+      margin: 730px auto auto auto;
       transition: 0.3s ease; }
       body .fTheme > div:hover {
         background: #D7C9AA;
@@ -157,9 +160,60 @@ body {
     background: #c1b599;
     border: none;
     display: none; }
+  body .fMenu {
+    z-index: 7000;
+    left: -100%; }
+    body .fMenu > div {
+      float: left;
+      height: 100%;
+      background: #f9f9f9; }
+    body .fMenu > div:nth-child(1) {
+      width: 40%;
+      border-right: 2px solid #c1b599; }
+      body .fMenu > div:nth-child(1) > div {
+        float: left;
+        width: 100%; }
+      body .fMenu > div:nth-child(1) > div:nth-child(1) {
+        padding: 20px 0;
+        border-bottom: 1px solid #c1b599; }
+        body .fMenu > div:nth-child(1) > div:nth-child(1) > div {
+          margin-left: 5%;
+          float: left;
+          width: 70px;
+          height: 70px; }
+          body .fMenu > div:nth-child(1) > div:nth-child(1) > div::after, body .fMenu > div:nth-child(1) > div:nth-child(1) > div::before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 50px;
+            margin: 10px auto auto 34px;
+            background: #c1b599; }
+          body .fMenu > div:nth-child(1) > div:nth-child(1) > div::after {
+            transform: rotate(45deg);
+            transition: 0.15s linear; }
+          body .fMenu > div:nth-child(1) > div:nth-child(1) > div::before {
+            transform: rotate(315deg);
+            transition: 0.15s linear; }
+          body .fMenu > div:nth-child(1) > div:nth-child(1) > div:hover::after {
+            transform: rotate(90deg);
+            background: #f9f9f9; }
+          body .fMenu > div:nth-child(1) > div:nth-child(1) > div:hover::before {
+            transform: rotate(360deg);
+            background: #f9f9f9; }
+        body .fMenu > div:nth-child(1) > div:nth-child(1) h1 {
+          float: left;
+          color: #f9f9f9;
+          font-size: 2.4em;
+          margin: 7px 0px 0px 100px;
+          display: none; }
+      body .fMenu > div:nth-child(1) > div:nth-child(2) {
+        height: 90%; }
+    body .fMenu > div:nth-child(2) {
+      width: 60%;
+      opacity: 0; }
   body .fPage {
     top: 100%;
-    z-index: 8000;
+    z-index: 5000;
     position: absolute;
     width: 100%;
     height: auto;
